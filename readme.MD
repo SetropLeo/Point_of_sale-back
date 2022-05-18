@@ -1,4 +1,4 @@
-# [NodeJS-Back_POS] SQL Database Project
+# [NodeJS Back - POS] SQL Database Project
 
 This project was made using:
 
