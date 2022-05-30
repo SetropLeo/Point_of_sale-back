@@ -7,7 +7,7 @@ This project was made using:
 - Express
   </br>
 
-### ENVIROMENT VARIABLES
+### ENVIROMENT VARIABLES (.env File)
 
 - TYPEORM_CONNECTION =
 - TYPEORM_HOST =
