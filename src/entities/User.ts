@@ -11,8 +11,4 @@ export class User extends BaseEntity {
 
   @Column({ type: 'varchar', length: 50 })
   email: string;
-
-  // TODO - LEARN HASHING
-  @Column({type: 'varchar', length: 50})
-  password: string;
 }
