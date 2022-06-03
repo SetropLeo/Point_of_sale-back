@@ -8,7 +8,6 @@ type FoodUpdateRequest = {
   description: string;
   category_id: string;
   price: number;
-  quantity: number;
 };
 
 export class UpdateFoodService {
@@ -19,7 +18,6 @@ export class UpdateFoodService {
     description,
     category_id,
     price,
-    quantity,
   }: FoodUpdateRequest) {
     const foodRepo = getRepository(Food);
 
@@ -34,7 +32,6 @@ export class UpdateFoodService {
     food.description = description ? description : food.description;
     food.category_id = category_id ? category_id : food.category_id;
     food.price = price ? price : food.price;
-    food.quantity = quantity ? quantity : food.quantity;
 
     foodRepo.save(food);
 

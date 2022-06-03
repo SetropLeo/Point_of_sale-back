@@ -18,7 +18,6 @@ export class CreateFoodService {
     description,
     category_id,
     price,
-    quantity,
   }: FoodRequest): Promise<Error | Food> {
     const foodRepository = getRepository(Food);
     const categoryRepository = getRepository(Category);
@@ -37,7 +36,6 @@ export class CreateFoodService {
       description,
       category_id,
       price,
-      quantity,
     });
 
     await foodRepository.save(food);
