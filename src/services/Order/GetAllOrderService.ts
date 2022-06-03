@@ -7,7 +7,7 @@ export class GetAllOrderService {
     const orderRepo = getRepository(Order);
 
     const orders = await orderRepo.find({
-      relations: ['food'],
+      relations: ['user'],
     });
 
     return orders;
