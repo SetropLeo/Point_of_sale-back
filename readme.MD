@@ -19,3 +19,13 @@ This project was made using:
 - TYPEORM_MIGRATIONS_DIR =
 - TYPEORM_ENTITIES =
 - TYPEORM_ENTITIES_DIR =
+
+
+
+
+
+##### TO-DO'S LIST
+
+- Create a list of categories '[{}]' in one requisition
+- 
+- 
