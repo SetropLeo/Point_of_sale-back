@@ -10,7 +10,7 @@ type FoodUpdateRequest = {
   price: number;
 };
 
-export class UpdateFoodService {
+export class  UpdateFoodService {
   async execute({
     id,
     name,
