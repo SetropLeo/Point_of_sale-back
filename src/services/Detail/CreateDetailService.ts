@@ -22,10 +22,6 @@ export class CreateDetailService {
       return new Error('Food not found');
     }
 
-    if (await orderRepository.findOne(food_id)) {
-      food_id = newId();
-    }
-
     const detail = detailRepository.create({
       quantity,
       food_id,
