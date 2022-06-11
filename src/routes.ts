@@ -3,6 +3,9 @@ import { CreateCategoryController } from './controllers/Category/CreateCategoryC
 import { DeleteCategoryController } from './controllers/Category/DeleteCategoryController';
 import { GetAllCategoryController } from './controllers/Category/GetAllCategoryController';
 import { UpdateCategoryController } from './controllers/Category/UpdateCategoryController';
+import { CreateDetailController } from './controllers/Detail/CreateDetailController';
+import { GetAllDetailController } from './controllers/Detail/GetAllDetailController';
+import { GetDetailController } from './controllers/Detail/GetDetailController';
 import { CreateFoodController } from './controllers/Food/CreateFoodController';
 import { DeleteFoodController } from './controllers/Food/DeleteFoodController';
 import { GetAllFoodController } from './controllers/Food/GetAllFoodController';
@@ -26,6 +29,10 @@ routes.delete('/food/delete/:id', new DeleteFoodController().handle);
 
 routes.post('/order/create', new CreateOrderController().handle);
 routes.get('/order/getAll', new GetAllOrderController().handle);
+
+routes.post('/detail/create', new CreateDetailController().handle);
+routes.get('/detail/getAll', new GetAllDetailController().handle)
+routes.get('/detail/get/:order_id', new GetDetailController().handle)
 
 routes.post('/user/create', new CreateUserController().handle);
 routes.get('/user/GetAll', new GetAllUserController().handle);
