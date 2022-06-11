@@ -6,8 +6,7 @@ export class GetAllDetailController {
   async handle(request: Request, response: Response) {
     const service = new GetAllDetailService();
 
-    const details = await service.execute();
-
-    return response.json(details);
+    const result = await service.execute();
+    return response.json(result);
   }
 }
