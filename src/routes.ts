@@ -1,31 +1,31 @@
 import { Router } from 'express';
-import { CreateCategoryController } from './controllers/Category/CreateCategoryController';
-import { DeleteCategoryController } from './controllers/Category/DeleteCategoryController';
-import { GetAllCategoryController } from './controllers/Category/GetAllCategoryController';
-import { UpdateCategoryController } from './controllers/Category/UpdateCategoryController';
+import CategoryController from './controllers/CategoryController';
+import FoodController from './controllers/FoodController';
+import UserController from './controllers/UserController';
 import { CreateDetailController } from './controllers/Detail/CreateDetailController';
 import { GetAllDetailController } from './controllers/Detail/GetAllDetailController';
 import { GetDetailController } from './controllers/Detail/GetDetailController';
-import { CreateFoodController } from './controllers/Food/CreateFoodController';
-import { DeleteFoodController } from './controllers/Food/DeleteFoodController';
-import { GetAllFoodController } from './controllers/Food/GetAllFoodController';
-import { UpdateFoodController } from './controllers/Food/UpdateFoodController';
 import { CreateOrderController } from './controllers/Order/CreateOrderController';
 import { GetAllOrderController } from './controllers/Order/GetAllOrderController';
-import { CreateUserController } from './controllers/User/CreateUserController';
-import { GetAllUserController } from './controllers/User/GetAllUserController';
+import CategoryService from './services/Category.service';
+import FoodService from './services/Food.service';
+import UserService from './services/User.Service';
+
+const foodController = new FoodController(new FoodService);
+const categoryController = new CategoryController(new CategoryService)
+const userController = new UserController(new UserService);
 
 const routes = Router();
 
-routes.post('/category/create', new CreateCategoryController().handle);
-routes.get('/category/getAll', new GetAllCategoryController().handle);
-routes.put('/category/update/:id', new UpdateCategoryController().handle);
-routes.delete('/category/delete/:id', new DeleteCategoryController().handle);
+routes.post('/category/create', categoryController.create);
+routes.get('/category/getAll', categoryController.get);
+routes.put('/category/update/:id', categoryController.update);
+routes.delete('/category/delete/:id', categoryController.delete);
 
-routes.post('/food/create', new CreateFoodController().handle);
-routes.get('/food/getAll', new GetAllFoodController().handle);
-routes.put('/food/update/:id', new UpdateFoodController().handle);
-routes.delete('/food/delete/:id', new DeleteFoodController().handle);
+routes.post('/food/', foodController.create);
+routes.get('/food/', foodController.get);
+routes.put('/food/:id', foodController.update);
+routes.delete('/food/:id', foodController.delete);
 
 routes.post('/order/create', new CreateOrderController().handle);
 routes.get('/order/getAll', new GetAllOrderController().handle);
@@ -34,7 +34,7 @@ routes.post('/detail/create', new CreateDetailController().handle);
 routes.get('/detail/getAll', new GetAllDetailController().handle)
 routes.get('/detail/get/:order_id', new GetDetailController().handle)
 
-routes.post('/user/create', new CreateUserController().handle);
-routes.get('/user/GetAll', new GetAllUserController().handle);
+routes.post('/user/create', userController.create);
+routes.get('/user/GetAll', userController.get);
 
 export { routes };
