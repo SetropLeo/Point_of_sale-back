@@ -1,7 +1,5 @@
 import { getRepository } from "typeorm";
 import { Order } from '../entities/Order';
-import asyncForEach from "../utils/Utils";
-import OrderItemService from "./Order-item.service";
 
 type OrderRequest = {
   price: number;
