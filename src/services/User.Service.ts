@@ -17,7 +17,7 @@ class UserService implements IUserService {
   public async create({ first_name, last_name, email }: UserRequest): Promise<User | Error> {
     const userRepository = getRepository(User);
 
-    const verifyEmail = await userRepository.findOne(email);
+    const verifyEmail = await userRepository.findOne({ email });
     if (verifyEmail) return new Error('E-mail already exists');
 
     const user = userRepository.create({ first_name, last_name, email })

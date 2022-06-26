@@ -33,44 +33,13 @@ class OrderService implements IOrderService {
   }
 
   public async getLast10() {
-    const orderItemService = new OrderItemService();
-    let foodsByOrders = [];
-
     const orders = await getRepository(Order)
       .createQueryBuilder("orders")
       .take(10)
       .orderBy("orders.created_at", "DESC")
       .getMany();
 
-    // orders = [
-    //   {
-    //     order_id: 'string',
-    //     foods: [
-    //       {
-    //         name: 'string',
-    //         price: 'number',
-    //         quantity: 'number',
-    //         image: 'string',
-    //       }
-    //     ]
-    //   }
-    // ]
-
-    await asyncForEach(orders, async (order) => {
-      orderItemService.getById(order.id)
-        .then((orderItems: any) => {
-          if (orderItems.length) {
-
-            const orderObject = {
-              order_id: orderItems.id,
-              foods: [
-                
-              ]
-            }
-          }
-        })
-    })
-    return foodsByOrders;
+    return orders;
   }
 }
 
