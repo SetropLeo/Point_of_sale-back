@@ -4,8 +4,8 @@ import { Food } from "./Food";
 import { Order } from "./Order";
 
 
-@Entity('details')
-export class Detail extends BaseEntity {
+@Entity('order_items')
+export class OrderItem extends BaseEntity {
 
   @Column()
   quantity: number;
