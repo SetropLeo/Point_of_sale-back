@@ -1,8 +1,8 @@
-# [NodeJS - POS] SQL Database Project
+# [Point Of Sale - BackEnd]
 
 This project was made using:
 
-- SQL Database Postgres
+- PostgreSQL DB
 - Node
 - Express
   </br>
@@ -24,8 +24,3 @@ This project was made using:
 
 
 
-##### TO-DO'S LIST
-
-- Create a list of categories '[{}]' in one requisition
-- 
-- 
