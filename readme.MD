@@ -2,9 +2,10 @@
 
 This project was made using:
 
-- PostgreSQL DB
-- Node
+- PostgreSQL
+- NodeJS
 - Express
+- TypeORM
   </br>
 
 ### ENVIROMENT VARIABLES (.env File)
